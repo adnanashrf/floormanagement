@@ -1,0 +1,246 @@
+/* Sidebar styles */
+.sidebar {
+    background-color: #3F86F0;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .container{
+    margin: 0;
+  }
+  .profile-section {
+    padding-top: 20px;
+    text-align: center;
+    margin-left: 10px;
+  }
+  
+  .profile-section-pad{
+    padding: 0;
+  }
+
+  .profile-section-info {    
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: #CCCCCC;
+    height: 14rem;
+    padding-top: 64px;
+  }
+  
+  .profile-image img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 4px solid #fff;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .welcome-text {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+ .complaint-logout {
+    margin-top: 28rem;
+  }
+  
+  /* Profile section styles */
+  .profile-info {
+    padding-left: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .left-info h2 {
+    padding-bottom: 10px;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .left-info p {
+    padding: 2px 0px;
+    margin: 0;
+    color: #888;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .right-info {
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .change-profile {
+    margin-top: 5px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .change-profile:hover {
+    color: #2980b9;
+  }
+  
+  .btns{    
+    font-family: unset;
+    font-weight: 500;
+    width: 100%;
+    background: #90D4F1;
+    margin: 1.2rem 0;
+  }
+
+  .btns:hover{
+    background-color: #3F86F0;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .active{
+    background: greenyellow;
+  }
+
+  .row {
+    margin-right: 0;
+  }
+  canvas#myChart {
+    margin: 3rem;
+}
+.graph{
+    display: flex;
+}
+
+
+
+
+.select-container {
+    text-align: right;
+    padding-top: 3.3rem;
+    display: inline-block;
+    position: relative;
+  }
+
+  /* Styling for the select element */
+  select {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Styling for the dropdown arrow */
+  select::after {
+    content: '\25BE';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #666;
+  }
+
+  /* Styling for option hover effect */
+  option:hover {
+    background-color: #ddd;
+  }
+
+
+  .heading {
+    text-align: center !important;
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold; /* Add font weight */
+    color: #333; /* Change text color */
+}
+
+.below_graph {
+    background: #CCCCCC; /* Lighter background color */
+    margin-bottom: 2rem;
+    padding: 3rem;
+    border-radius: 10px; /* Add border radius for rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add subtle box shadow */
+}
+
+.repo{
+    width: 10rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.buttons{
+    text-align: center;
+}
+
+.footer{
+    text-align: center;
+    background: #3F86F0;
+    color: white;
+}
+p{
+    margin: 0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 20px; /* Decrease font size for smaller screens */
+    }
+
+    .below_graph {
+        padding: 2rem; /* Decrease padding for smaller screens */
+    }
+
+    .select-container{
+        display: none;
+    }
+
+}
+
+  @media (max-width: 990px) {
+    .select-container {
+        padding: 20px 10px;
+        font-size: 8px;
+    }
+    .complaint-logout {
+        margin-top: 16rem;
+  }
+
+    select {
+        font-size: 14px; /* Decrease font size for smaller screens */
+        padding: 8px; /* Decrease padding for smaller screens */
+    }
+    canvas#myChart {
+      margin: 1.5rem;
+}
+  }
+
+@media (max-width: 786px) {
+  .select-container {
+      padding: 25px 10px;
+      font-size: 40px;
+  }
+
+  select {
+      font-size: 9px; /* Decrease font size for smaller screens */
+      padding: 10px; /* Decrease padding for smaller screens */
+  }
+  canvas#myChart {
+    margin: 1rem;
+}
+}
+
+

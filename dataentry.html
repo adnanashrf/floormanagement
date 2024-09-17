@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/favicon_io/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dataentry.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <title>Floor Distribution System</title>
+</head>
+
+<body>
+    <div class="fluid-container">
+        <div class="row">
+            <nav class="col-sm-3 col-md-3 col-lg-2 sidebar">
+                <!-- Sidebar content -->
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img src="img/logoAJK.png" alt="Profile Image" class="img-fluid">
+                    </div>
+                    <h4 class="welcome-text">Welcome<br>Adnan Ashraf</h4>
+                    <div class="buttons">
+                        <button class="btn btns " onclick="redirectToDashboard2()">Dashboard</button>
+                        <button class="btn btns active" onclick="redirectToDashboard1()">Data Entry</button>
+                    </div>
+                    <div class="complaint-logout">
+                        <button class="btn btns">Complaint</button>
+                        <button class="btn btns" onclick="redirectToDashboard()">Logout</button>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="col-lg-10 col-md-9 col-sm-9 profile-section-pad">
+                <!-- Profile section -->
+                <div class="profile-section-info">
+                    <div class="profile-info">
+                        <div class="left-info">
+                            <h2>Adnan Ashraf</h2>
+                            <p>Email: adnan@gmail.com</p>
+                            <p>Date: <span id="currentDate"></span></p>
+                            <p>Day: <span id="currentDay"></span></p>
+                        </div>
+                        <div class="right-info">
+                            <img src="img/logoAJK.png" alt="Profile Image" class="profile-img img-fluid">
+                            <a href="#" class="change-profile">Change Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data_entry_heading">
+                    <h3>
+                        Floor Distribution System, Mirpur<br><br>Data Entry Form
+                    </h3>
+
+                </div>
+
+                <form action="">
+                    <div class="search-container">
+                        <input type="text" name="" id="search" placeholder="Enter thr CNIC or Token number" required>
+                        <button class="search-button">Search</button>
+                    </div>
+                </form>
+
+                <div class="below_graph" style="padding: 6px; font-family: 'Times New Roman', Times, serif;">
+                    <p class="heading" style="font-size: 18px;">Please enter the following details</p>
+                </div>
+                <form action="">
+                    <div class="search-container">
+                        <input type="text" name="" id="search" placeholder="Name" required>
+                    </div>
+
+                    <div class="search-container">
+                        <input type="text" name="" id="search" placeholder="Address" required>
+                    </div>
+
+                    <div class="search-container">
+                        <input type="number" name="" id="search" placeholder="Age" required>
+                    </div>
+
+                    <div class="search-container">
+                        <input type="text" name="" id="search" placeholder="CNIC (XXXXX-XXXXXXX-X)"
+                            pattern="\d{5}-\d{7}-\d" required>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn btns repo">Add Record</button>
+                    </div>
+                </form>
+                <footer class="footer">
+                    <p>Copyright &copy; Muslim Hands. All Rights Reserved</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function redirectToDashboard1() {
+            // Replace "dashboard.html" with the actual URL of your dashboard page
+            window.location.href = "dataentry.html";
+        }
+        function redirectToDashboard2() {
+            // Replace "dashboard.html" with the actual URL of your dashboard page
+            window.location.href = "dashboard.html";
+        }
+        function redirectToDashboard() {
+            // Replace "dashboard.html" with the actual URL of your dashboard page
+            window.location.href = "index.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the current date
+            var currentDate = new Date();
+
+            // Array of weekday names
+            var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+            // Display current date and day
+            var currentDateSpan = document.getElementById("currentDate");
+            var currentDaySpan = document.getElementById("currentDay");
+
+            currentDateSpan.textContent = formatDate(currentDate);
+            currentDaySpan.textContent = daysOfWeek[currentDate.getDay()];
+        });
+
+        // Function to format the date as "Month Day, Year"
+        function formatDate(date) {
+            var options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString(undefined, options);
+        }
+    </script>
+
+</body>
+
+</html>

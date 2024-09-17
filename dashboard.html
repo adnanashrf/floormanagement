@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/favicon_io/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <title>Floor Distribution System</title>
+</head>
+
+<body>
+    <div class="fluid-container">
+        <div class="row">
+            <nav class="col-sm-3 col-md-3 col-lg-2 sidebar">
+                <!-- Sidebar content -->
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img src="img/logoAJK.png" alt="Profile Image" class="img-fluid">
+                    </div>
+                    <h4 class="welcome-text">Welcome<br>Adnan Ashraf</h4>
+                    <div class="buttons">
+                        <button class="btn btns active" onclick="redirectToDashboar2()">Dashboard</button>
+                        <button class="btn btns" onclick="redirectToDashboard1()">Data Entry</button>
+                    </div>
+                    <div class="complaint-logout">
+                        <button class="btn btns">Complaint</button>
+                        <button class="btn btns" onclick="redirectToDashboard()">Logout</button>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="col-lg-10 col-md-9 col-sm-9 profile-section-pad">
+                <!-- Profile section -->
+                <div class="profile-section-info">
+                    <div class="profile-info">
+                        <div class="left-info">
+                            <h2>Adnan Ashraf</h2>
+                            <p>Email: adnan@gmail.com</p>
+                            <p>Date: <span id="currentDate"></span></p>
+                            <p>Day: <span id="currentDay"></span></p>
+                        </div>
+                        <div class="right-info">
+                            <img src="img/logoAJK.png" alt="Profile Image" class="profile-img img-fluid">
+                            <a href="#" class="change-profile">Change Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="graph col-lg-12 col-md-9 col-sm-11 col-11">
+                    <canvas id="myChart" style="max-width:700px; max-height: 300px;"></canvas>
+                    <div class="select-container">
+                        <select name="" id="">
+                            <option value="">This Week</option>
+                            <option value="">This Month</option>
+                            <option value="">This Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="below_graph">
+                    <h4 class="heading">Details</h4>
+                    <h6>Total number of floor: .....................</h6>
+                    <h6>Total number of floor given: ...................</h6>
+                    <h6>Total number of peoples: ....................</h6>
+                    <h6>Total number of floor remaining: ..................</h6>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn btns repo">Download Report</button>
+                </div>
+
+                <footer class="footer">
+                    <p>Copyright &copy; Muslim Hands. All Rights Reserved</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function redirectToDashboard1() {
+            // Replace "dashboard.html" with the actual URL of your dashboard page
+            window.location.href = "dataentry.html";
+        }
+        function redirectToDashboard2() {
+            // Replace "dashboard.html" with the actual URL of your dashboard page
+            window.location.href = "dashboard.html";
+        }
+        function redirectToDashboard() {
+            // Replace "dashboard.html" with the actual URL of your dashboard page
+            window.location.href = "index.html";
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the current date
+            var currentDate = new Date();
+
+            // Array of weekday names
+            var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+            // Display current date and day
+            var currentDateSpan = document.getElementById("currentDate");
+            var currentDaySpan = document.getElementById("currentDay");
+
+            currentDateSpan.textContent = formatDate(currentDate);
+            currentDaySpan.textContent = daysOfWeek[currentDate.getDay()];
+        });
+
+        // Function to format the date as "Month Day, Year"
+        function formatDate(date) {
+            var options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString(undefined, options);
+        }
+
+        var xValues = ["Monday", "Wednesday", "Monday", "Wednesday", "Monday"];
+        var yValues = [55, 49, 44, 24, 16];
+        var barColors = "lightblue";
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: "Bar Graph of Previous Days of Current Month"
+                }
+            }
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>
